@@ -247,6 +247,38 @@ section.main article.history .work div.two {
 section.main article.history .work div.three {
   background: whitesmoke;
 }
+section.main article.contact {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px dashed black;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "top top" "cont1 cont2";
+  grid-template-columns: 50% 50%;
+  text-align: center;
+}
+section.main article.contact h2 {
+  text-align: center;
+}
+section.main article.contact h2.top {
+  grid-area: top;
+  border-bottom: 1px solid black;
+  padding: 0 0 10px;
+}
+section.main article.contact p {
+  padding: 10px 0;
+}
+section.main article.contact p.cont1 {
+  grid-area: cont1;
+  border-right: 1px solid black;
+}
+section.main article.contact p.cont2 {
+  grid-area: cont2;
+}
+section.main article.contact a {
+  color: #000033;
+  text-decoration: none;
+}
 footer {
   width: 100%;
   background: #000033;
