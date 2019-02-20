@@ -1,9 +1,12 @@
-// Is this working?
+// out: ../css/index.css
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+//Variables
+@accentColor: rgb(0, 0, 51);
 
+//Reset
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,3 +60,124 @@ html, body {
     height: 100%;
 }
 
+// Back
+body{
+	background: lightgray;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	margin: 10px 0;
+}
+.wrap{
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	background: white;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	border-radius: 10px;
+}
+
+//Nav
+nav{
+	display: flex;
+	justify-content: flex-end;
+	margin: 10px;
+	padding: 0 10px;
+	width: 100%;
+	a{
+		color: @accentColor;
+		text-decoration: none;
+		font-size: .9rem;
+		padding: 0 10px;
+		margin: 0 10px;
+		&:hover{
+			font-weight: bold;
+		}
+	}
+}
+
+// Header
+header{
+	&.home{
+		width: 80%;
+		padding: 5%;
+		background: lightslategray;
+		display: flex;
+		flex-direction: column;
+		border-right: 1px solid black;
+		border-bottom: 1px solid black;
+		img{
+			width: 40%;
+		}
+		div.header-text{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			h1{
+				font-size: 3rem;
+				margin: 0 0 15px;
+			}
+			p{
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+// Main
+section.main{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 25px 0;
+	article{
+		width: 45%;
+		margin: 0 2.5%;
+		h2{
+			font-size: 1.7rem;
+			margin-bottom: 10px;
+		}
+		h3{
+			font-size: 1.7rem;
+			margin-bottom: 10px;
+			text-align: right;
+		}
+		p{
+			font-size: 1rem;
+			line-height: 1.2;
+		}
+		ul{
+			text-align: right;
+			font-size: 1rem;
+			li{
+				padding: 10px 5px 0 0;
+				border-left: 1px solid @accentColor;
+			}
+		}
+		&.history{
+			margin-top: 20px;
+			padding: 10px 0;
+			border-top: 1px dashed black;
+			width: 100%;
+			h2{
+				text-align: center;
+			}
+			.worf{
+				display: flex;
+				justify-content: space-evenly;
+				font-size: 1rem;
+				background: whitesmoke;
+			}
+		}
+	}
+}
+
+// Footer
+footer{
+	width: 100%;
+	background: @accentColor;
+	text-align: center;
+	padding: 20px 0;
+	font-size: .7rem;
+	color: whitesmoke;
+}
