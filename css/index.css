@@ -173,12 +173,12 @@ header.home {
   display: flex;
   flex-direction: column;
   border-right: 1px solid black;
-  border-radius: 0px 15px 100px 0px;
+  border-radius: 0px 100% 100px 0px;
   border-bottom: 1px solid black;
 }
 @media (max-width: 500px) {
   header.home {
-    border-radius: 0px 15px 50px 0px;
+    border-radius: 0px 100% 50px 0px;
   }
 }
 @media (max-width: 500px) {
@@ -188,6 +188,7 @@ header.home {
 }
 header.home img {
   width: 40%;
+  border-radius: 30%;
 }
 header.home div.header-text {
   display: flex;
