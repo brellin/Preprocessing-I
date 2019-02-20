@@ -5,6 +5,7 @@
 */
 // Variables
 @accentColor: rgb(0, 0, 51);
+@mob: (max-width: 500px);
 
 // Mixins
 .top(@type){
@@ -13,6 +14,10 @@
 .bottom(@type){
 	border-bottom: 1px @type black;
 }
+.btm(@num; @type; @color){
+	border-bottom: @num @type @color;
+}
+
 
 //Reset
 html, body, div, span, applet, object, iframe,
@@ -113,7 +118,10 @@ header{
 		display: flex;
 		flex-direction: column;
 		border-right: 1px solid black;
-		border-bottom: 1px solid black;
+		.bottom(solid);
+		@media @mob{
+			width: 100%;
+		}
 		img{
 			width: 40%;
 		}
@@ -138,17 +146,28 @@ section.main{
 	display: flex;
 	flex-wrap: wrap;
 	margin: 25px 0;
+	@media @mob{
+		margin: 0px;
+	}
 	article{
 		width: 45%;
 		margin: 0 2.5%;
 		h2{
 			font-size: 1.7rem;
 			margin-bottom: 10px;
+			@media @mob{
+				text-align: center;
+			}
 		}
 		h3{
 			font-size: 1.7rem;
 			margin-bottom: 10px;
 			text-align: right;
+			@media @mob{
+				text-align: center;
+				.top(dotted);
+				padding-top: 15px;
+			}
 		}
 		p{
 			font-size: 1rem;
@@ -158,10 +177,20 @@ section.main{
 		ul{
 			text-align: right;
 			font-size: 1rem;
+			@media @mob{
+				text-align: center;
+			}
 			li{
 				padding: 10px 5px 0 0;
 				border-left: 1px solid @accentColor;
+				@media @mob{
+					border: 0px;
+				}
 			}
+		}
+		@media @mob{
+			width: 100%;
+			margin-top: 15px;
 		}
 		&.history{
 			margin-top: 20px;
@@ -201,7 +230,7 @@ section.main{
 				text-align: center;
 				&.top{
 					grid-area: top;
-					.bottom(solid);
+					.btm(1px, dotted, black);
 					padding: 0 0 10px;
 				}
 			}
