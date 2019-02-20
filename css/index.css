@@ -212,6 +212,7 @@ section.main article h3 {
 section.main article p {
   font-size: 1rem;
   line-height: 1.2;
+  white-space: pre-line;
 }
 section.main article ul {
   text-align: right;
@@ -230,10 +231,20 @@ section.main article.history {
 section.main article.history h2 {
   text-align: center;
 }
-section.main article.history .worf {
-  display: flex;
-  justify-content: space-evenly;
+section.main article.history .work {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: 40% 40% 20%;
+  background: lightgray;
   font-size: 1rem;
+}
+section.main article.history .work div {
+  padding: 10px 5px;
+}
+section.main article.history .work div.two {
+  background: lightyellow;
+}
+section.main article.history .work div.three {
   background: whitesmoke;
 }
 footer {

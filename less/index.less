@@ -145,6 +145,7 @@ section.main{
 		p{
 			font-size: 1rem;
 			line-height: 1.2;
+			white-space: pre-line;
 		}
 		ul{
 			text-align: right;
@@ -162,11 +163,21 @@ section.main{
 			h2{
 				text-align: center;
 			}
-			.worf{
-				display: flex;
-				justify-content: space-evenly;
+			.work{
+				display: grid;
+				border: 1px solid black;
+				grid-template-columns: 40% 40% 20%;
+				background: lightgray;
 				font-size: 1rem;
-				background: whitesmoke;
+				div{
+					padding: 10px 5px;
+					&.two{
+						background: lightyellow;
+					}
+					&.three{
+						background: whitesmoke;
+					}
+				}
 			}
 		}
 	}
