@@ -1,1 +1,334 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  margin: 10px 0;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  background: white;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  border-radius: 30px 15px;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  padding: 0 10px;
+  width: 100%;
+}
+nav a {
+  color: #000033;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+nav a:hover {
+  font-weight: bold;
+}
+header.home {
+  width: 80%;
+  padding: 5%;
+  background: lightslategray;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid black;
+  border-radius: 0px 100% 100px 0px;
+  border-bottom: 1px solid black;
+}
+@media (max-width: 500px) {
+  header.home {
+    border-radius: 0px 100% 50px 0px;
+  }
+}
+@media (max-width: 500px) {
+  header.home {
+    width: 100%;
+  }
+}
+header.home img {
+  width: 40%;
+  border-radius: 30%;
+}
+header.home div.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+header.home div.header-text h1 {
+  font-size: 3rem;
+  margin: 0 0 15px;
+}
+header.home div.header-text p {
+  font-size: 1rem;
+}
+section.main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+@media (max-width: 500px) {
+  section.main {
+    margin: 0px;
+  }
+}
+section.main article {
+  width: 45%;
+  margin: 0 2.5%;
+}
+section.main article h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+@media (max-width: 500px) {
+  section.main article h2 {
+    text-align: center;
+  }
+}
+section.main article h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  text-align: right;
+}
+@media (max-width: 500px) {
+  section.main article h3 {
+    text-align: center;
+    border-top: 1px dotted black;
+    padding-top: 15px;
+  }
+}
+section.main article p {
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: pre-line;
+}
+section.main article ul {
+  text-align: right;
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  section.main article ul {
+    text-align: center;
+  }
+}
+section.main article ul li {
+  padding: 10px 5px 0 0;
+  border-left: 1px solid #000033;
+}
+@media (max-width: 500px) {
+  section.main article ul li {
+    border: 0px;
+  }
+}
+@media (max-width: 500px) {
+  section.main article {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+section.main article.history {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px dashed black;
+  width: 100%;
+}
+section.main article.history h2 {
+  text-align: center;
+}
+section.main article.history .work {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: 40% 40% 20%;
+  background: lightgray;
+  font-size: 1rem;
+}
+section.main article.history .work div {
+  padding: 10px 5px;
+}
+section.main article.history .work div.two {
+  background: lightyellow;
+}
+section.main article.history .work div.three {
+  background: whitesmoke;
+}
+section.main article.contact {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px dashed black;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "top top" "cont1 cont2";
+  grid-template-columns: 50% 50%;
+  text-align: center;
+}
+section.main article.contact h2 {
+  text-align: center;
+}
+section.main article.contact h2.top {
+  grid-area: top;
+  border-bottom: 1px dotted black;
+  padding: 0 0 10px;
+}
+section.main article.contact p {
+  padding: 10px 0;
+}
+section.main article.contact p.cont1 {
+  grid-area: cont1;
+  border-right: 1px solid black;
+}
+section.main article.contact p.cont2 {
+  grid-area: cont2;
+}
+section.main article.contact a {
+  color: #000033;
+  text-decoration: none;
+}
+footer {
+  width: 100%;
+  background: #000033;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.7rem;
+  color: whitesmoke;
+}

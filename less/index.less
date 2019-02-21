@@ -1,9 +1,25 @@
-// Is this working?
+// out: ../css/index.css
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+// Variables
+@accentColor: rgb(0, 0, 51);
+@mob: (max-width: 500px);
 
+// Mixins
+.top(@type){
+	border-top: 1px @type black;
+}
+.bottom(@type){
+	border-bottom: 1px @type black;
+}
+.btm(@num; @type; @color){
+	border-bottom: @num @type @color;
+}
+
+
+//Reset
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,3 +73,196 @@ html, body {
     height: 100%;
 }
 
+// Back
+body{
+	background: lightgray;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	margin: 10px 0;
+}
+.wrap{
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	background: white;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	border-radius: 30px 15px;
+}
+
+//Nav
+nav{
+	display: flex;
+	justify-content: flex-end;
+	margin: 10px;
+	padding: 0 10px;
+	width: 100%;
+	a{
+		color: @accentColor;
+		text-decoration: none;
+		font-size: .9rem;
+		padding: 0 10px;
+		margin: 0 10px;
+		&:hover{
+			font-weight: bold;
+		}
+	}
+}
+
+// Header
+header{
+	&.home{
+		width: 80%;
+		padding: 5%;
+		background: lightslategray;
+		display: flex;
+		flex-direction: column;
+		border-right: 1px solid black;
+		border-radius: 0px 100% 100px 0px;
+		@media @mob{
+			border-radius: 0px 100% 50px 0px;
+		}
+		.bottom(solid);
+		@media @mob{
+			width: 100%;
+		}
+		img{
+			width: 40%;
+			border-radius: 30%;
+		}
+		div.header-text{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			h1{
+				font-size: 3rem;
+				margin: 0 0 15px;
+			}
+			p{
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+// Main
+section.main{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 25px 0;
+	@media @mob{
+		margin: 0px;
+	}
+	article{
+		width: 45%;
+		margin: 0 2.5%;
+		h2{
+			font-size: 1.7rem;
+			margin-bottom: 10px;
+			@media @mob{
+				text-align: center;
+			}
+		}
+		h3{
+			font-size: 1.7rem;
+			margin-bottom: 10px;
+			text-align: right;
+			@media @mob{
+				text-align: center;
+				.top(dotted);
+				padding-top: 15px;
+			}
+		}
+		p{
+			font-size: 1rem;
+			line-height: 1.2;
+			white-space: pre-line;
+		}
+		ul{
+			text-align: right;
+			font-size: 1rem;
+			@media @mob{
+				text-align: center;
+			}
+			li{
+				padding: 10px 5px 0 0;
+				border-left: 1px solid @accentColor;
+				@media @mob{
+					border: 0px;
+				}
+			}
+		}
+		@media @mob{
+			width: 100%;
+			margin-top: 15px;
+		}
+		&.history{
+			margin-top: 20px;
+			padding: 10px 0;
+			.top(dashed);
+			width: 100%;
+			h2{
+				text-align: center;
+			}
+			.work{
+				display: grid;
+				border: 1px solid black;
+				grid-template-columns: 40% 40% 20%;
+				background: lightgray;
+				font-size: 1rem;
+				div{
+					padding: 10px 5px;
+					&.two{
+						background: lightyellow;
+					}
+					&.three{
+						background: whitesmoke;
+					}
+				}
+			}
+		}
+		&.contact{
+			margin-top: 20px;
+			padding: 10px 0;
+			.top(dashed);
+			width: 100%;
+			display: grid;
+			grid-template-areas: "top top" "cont1 cont2";
+			grid-template-columns: 50% 50%;
+			text-align: center;
+			h2{
+				text-align: center;
+				&.top{
+					grid-area: top;
+					.btm(1px, dotted, black);
+					padding: 0 0 10px;
+				}
+			}
+			p{
+				padding: 10px 0;
+				&.cont1{
+					grid-area: cont1;
+					border-right: 1px solid black;
+				}
+				&.cont2{
+					grid-area: cont2;
+				}
+			}
+			a{
+				color: @accentColor;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// Footer
+footer{
+	width: 100%;
+	background: @accentColor;
+	text-align: center;
+	padding: 20px 0;
+	font-size: .7rem;
+	color: whitesmoke;
+}
