@@ -305,23 +305,24 @@ section.main article.contact {
   grid-template-columns: 50% 50%;
   text-align: center;
 }
-section.main article.contact h2 {
-  text-align: center;
-}
 section.main article.contact h2.top {
   grid-area: top;
-  border-bottom: 1px dotted black;
   padding: 0 0 10px;
+  text-align: center;
 }
 section.main article.contact p {
-  padding: 10px 0;
+  padding: 15px;
 }
 section.main article.contact p.cont1 {
   grid-area: cont1;
   border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-radius: 15px 15px 0 0;
 }
 section.main article.contact p.cont2 {
   grid-area: cont2;
+  border-top: 1px solid black;
+  border-radius: 15px 15px 0 0;
 }
 section.main article.contact a {
   color: #00536e;
