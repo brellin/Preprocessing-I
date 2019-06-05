@@ -17,9 +17,7 @@
     border-bottom: 1px @type black;
 }
 
-.btm(@num;
-@type;
-@color) {
+.btm(@num; @type; @color) {
     border-bottom: @num @type @color;
 }
 
@@ -230,6 +228,7 @@ header {
             width: 40%;
             border-radius: 30%;
         }
+
         div.header-text {
             display: flex;
             flex-direction: column;
@@ -343,6 +342,7 @@ section.main {
                 }
             }
         }
+
         &.contact {
             margin-top: 20px;
             padding: 10px 0;
@@ -354,25 +354,28 @@ section.main {
             text-align: center;
 
             h2 {
-                text-align: center;
 
                 &.top {
                     grid-area: top;
-                    .btm(1px, dotted, black);
                     padding: 0 0 10px;
+                    text-align: center;
                 }
             }
 
             p {
-                padding: 10px 0;
+                padding: 15px;
 
                 &.cont1 {
                     grid-area: cont1;
                     border-right: 1px solid black;
+                    .top(solid);
+                    border-radius: 15px 15px 0 0;
                 }
 
                 &.cont2 {
                     grid-area: cont2;
+                    .top(solid);
+                    border-radius: 15px 15px 0 0;
                 }
             }
 
